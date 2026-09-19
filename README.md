@@ -11,3 +11,14 @@
 ###  A Modern FinTech Style Loan Calculator built using Pure HTML, CSS & JavaScript.
 
 ---
+
+
+
+<div align="center">
+
+#  Live Demo
+
+
+https://clear-coffee-rsvtufa4.edgeone.dev/ ---Premium calculator
+
+https://warm-magenta-1ywdrlc8.edgeone.dev/ ---Normal calculator
