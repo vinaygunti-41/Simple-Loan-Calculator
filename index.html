@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Loan Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <section class="card" aria-labelledby="app-title">
+
+            <header class="card-header">
+                <h1 id="app-title">🧡 Simple Loan Calculator</h1>
+                <p class="subtitle">Calculate your EMI, total payment, and total interest instantly.</p>
+            </header>
+
+            <form id="loan-form" novalidate>
+                <div class="field">
+                    <label for="loan-amount">Enter Loan Amount</label>
+                    <div class="input-wrap">
+                        <span class="icon" aria-hidden="true">💰</span>
+                        <input type="number" id="loan-amount" name="loan-amount"
+                               placeholder="e.g. 500000" min="0" step="any" inputmode="decimal">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="loan-interest">Enter Loan Interest <small>(%)</small></label>
+                    <div class="input-wrap">
+                        <span class="icon" aria-hidden="true">📈</span>
+                        <input type="number" id="loan-interest" name="loan-interest"
+                               placeholder="e.g. 8.5" min="0" step="any" inputmode="decimal">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="loan-years">Years to Pay</label>
+                    <div class="input-wrap">
+                        <span class="icon" aria-hidden="true">📅</span>
+                        <input type="number" id="loan-years" name="loan-years"
+                               placeholder="e.g. 5" min="0" step="any" inputmode="decimal">
+                    </div>
+                </div>
+
+                <p id="form-error" class="form-error" role="alert" aria-live="polite"></p>
+
+                <div class="btn-row">
+                    <button type="submit" class="btn btn-primary" id="calculate-btn">Calculate</button>
+                    <button type="reset" class="btn btn-ghost" id="reset-btn">Reset</button>
+                </div>
+            </form>
+
+            <div class="results" aria-live="polite">
+                <table id="result">
+                    <tbody>
+                        <tr><th scope="row">Principal</th><td id="principal">₹0</td></tr>
+                        <tr><th scope="row">Annual Rate</th><td id="annual-rate">0%</td></tr>
+                        <tr><th scope="row">Loan Terms</th><td id="loan-terms">0 Years</td></tr>
+                        <tr><th scope="row">Monthly Payable</th><td id="monthly-pay">₹0</td></tr>
+                        <tr><th scope="row">Total Cost</th><td id="total-pay">₹0</td></tr>
+                        <tr><th scope="row">Total Interest</th><td id="total-interest">₹0</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

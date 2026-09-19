@@ -1,0 +1,283 @@
+/* ---------- Design tokens ---------- */
+:root {
+    --bg: #090909;
+    --orange: #FF8C00;
+    --orange-2: #FFA500;
+    --glass: rgba(255, 255, 255, 0.04);
+    --glass-strong: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 140, 0, 0.28);
+    --divider: rgba(255, 140, 0, 0.22);
+    --text: #ffffff;
+    --muted: #9a9a9a;
+    --danger: #ff6b5e;
+    --radius: 20px;
+    --ease: 0.3s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
+    background-image:
+        radial-gradient(circle at 15% 10%, rgba(255, 140, 0, 0.16), transparent 42%),
+        radial-gradient(circle at 88% 92%, rgba(255, 165, 0, 0.12), transparent 40%);
+    background-attachment: fixed;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+}
+
+/* ---------- Glass card ---------- */
+.card {
+    width: 100%;
+    max-width: 460px;
+    padding: 32px 28px;
+    border-radius: 22px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    box-shadow:
+        0 0 0 1px rgba(255, 140, 0, 0.05),
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        0 0 50px rgba(255, 140, 0, 0.10);
+}
+
+/* ---------- Header ---------- */
+.card-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-family: 'Orbitron', 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.65rem;
+    line-height: 1.25;
+    color: var(--orange);
+    text-shadow:
+        0 0 8px rgba(255, 140, 0, 0.75),
+        0 0 24px rgba(255, 140, 0, 0.45);
+}
+
+.subtitle {
+    margin: 0;
+    font-size: 0.86rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* ---------- Form ---------- */
+.field {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.86rem;
+    font-weight: 500;
+    color: #f1f1f1;
+}
+
+label small {
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.05rem;
+    pointer-events: none;
+}
+
+input {
+    width: 100%;
+    padding: 13px 14px 13px 44px;
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 14px;
+    outline: none;
+    transition: border-color var(--ease), box-shadow var(--ease), background var(--ease);
+}
+
+input::placeholder {
+    color: #8b8b8b;
+}
+
+input:focus {
+    border-color: var(--orange);
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.18), 0 0 18px rgba(255, 140, 0, 0.35);
+}
+
+input.invalid {
+    border-color: var(--danger);
+}
+
+/* hide number spinners for a cleaner look */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.form-error {
+    min-height: 1.3em;
+    margin: 0 0 10px;
+    font-size: 0.82rem;
+    color: var(--danger);
+}
+
+/* ---------- Buttons ---------- */
+.btn-row {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    flex: 1;
+    padding: 13px 16px;
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform var(--ease), box-shadow var(--ease), background var(--ease), color var(--ease);
+}
+
+.btn-primary {
+    color: #1a0f00;
+    background: linear-gradient(135deg, var(--orange), var(--orange-2));
+    border: 1px solid var(--orange-2);
+    box-shadow: 0 0 16px rgba(255, 140, 0, 0.35);
+}
+
+.btn-ghost {
+    color: var(--orange);
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--orange);
+}
+
+.btn:hover {
+    transform: scale(1.03);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 28px rgba(255, 140, 0, 0.7);
+}
+
+.btn-ghost:hover {
+    background: rgba(255, 140, 0, 0.10);
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.35);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--orange-2);
+    outline-offset: 2px;
+}
+
+/* ---------- Results ---------- */
+.results {
+    margin-top: 26px;
+    border-radius: 18px;
+    background: var(--glass-strong);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+#result {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#result th,
+#result td {
+    padding: 14px 18px;
+    font-size: 0.92rem;
+    border-bottom: 1px solid var(--divider);
+}
+
+#result tr:last-child th,
+#result tr:last-child td {
+    border-bottom: none;
+}
+
+#result th {
+    text-align: left;
+    font-weight: 400;
+    color: #d8d8d8;
+}
+
+#result td {
+    text-align: right;
+    font-weight: 600;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+}
+
+/* highlight the most important figure */
+#result tr:nth-child(4) td {
+    color: var(--orange);
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.55);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+    .card {
+        padding: 26px 18px;
+    }
+    h1 {
+        font-size: 1.35rem;
+    }
+    .btn-row {
+        flex-direction: column;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+    .btn:hover {
+        transform: none;
+    }
+}
