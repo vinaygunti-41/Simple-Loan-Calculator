@@ -16,7 +16,7 @@
 
 <div align="center">
 
-#  Live Demo
+#  Live Demo.
 
 
 https://clear-coffee-rsvtufa4.edgeone.dev/ ---Premium calculator
